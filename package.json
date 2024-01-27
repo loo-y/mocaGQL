@@ -36,6 +36,7 @@
     },
     "homepage": "https://github.com/loo-y/mocaGQL#readme",
     "devDependencies": {
+        "@types/lodash": "^4.14.202",
         "@types/node": "20.11.7",
         "@typescript-eslint/eslint-plugin": "^6.19.1",
         "@typescript-eslint/parser": "^6.19.1",
@@ -52,6 +53,7 @@
         "@graphql-tools/schema": "^10.0.2",
         "dataloader": "^2.2.2",
         "graphql": "^16.8.1",
-        "graphql-yoga": "^5.1.1"
+        "graphql-yoga": "^5.1.1",
+        "lodash": "^4.17.21"
     }
 }
