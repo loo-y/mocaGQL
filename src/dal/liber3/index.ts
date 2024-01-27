@@ -22,9 +22,9 @@ const loaderLiber3 = async (ctx: TBaseContext, args: Liber3Args) => {
     let loader = new DataLoader<string, string>(async keys => {
         console.log(`loaderLiber3-${keys}-🐹🐹🐹`)
         try {
-            const { keywords } = args || {}
+            const { keywords, count } = args || {}
             const params = {
-                sql: `select /*+ SET_VAR(full_text_option='{\"highlight\":{ \"style\":\"html\",\"fields\":[\"title\",\"author\"]}}') */ ipfs_cid,title,author,extension,language,publisher,year,filesize, _score,_id from library.ebook where query_string('title:\\\"${keywords}\\\"^1 author:\\\"${keywords}\\\"^0.5 title:${keywords}^0.1 author:${keywords}^0.1') limit 0, 50`,
+                sql: `select /*+ SET_VAR(full_text_option='{\"highlight\":{ \"style\":\"html\",\"fields\":[\"title\",\"author\"]}}') */ ipfs_cid,title,author,extension,language,publisher,year,filesize, _score,_id from library.ebook where query_string('title:\\\"${keywords}\\\"^1 author:\\\"${keywords}\\\"^0.5 title:${keywords}^0.1 author:${keywords}^0.1') limit 0, ${count || 10}`,
                 arguments: [],
             }
             const liber3Json = await fetchLiber3(ctx, params)
