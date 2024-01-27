@@ -39,7 +39,7 @@ const typeDefinitions = /* GraphQL */ `
 `
 const resolvers = {
     Query: {
-        liber3: async (ctx: any, args: any) => {
+        liber3: async (ctx: TBaseContext, args: any) => {
             const bookArg = args?.params || {}
             const keywords = bookArg?.keywords || ``
             if (!keywords) return []

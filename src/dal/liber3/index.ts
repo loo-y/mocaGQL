@@ -1,7 +1,7 @@
 import DataLoader from 'dataloader'
 import { Liber3Args } from './type'
 
-const fetchLiber3 = async (ctx: any, params: Record<string, any>, options: Record<string, any> = {}) => {
+const fetchLiber3 = async (ctx: TBaseContext, params: Record<string, any>, options: Record<string, any> = {}) => {
     let url = `https://gateway.glitternode.ru/blockved/glitterchain/index/sql/simple_query`
 
     console.log(`fetchLiber3🐹🐹🐹`)
@@ -18,7 +18,7 @@ const fetchLiber3 = async (ctx: any, params: Record<string, any>, options: Recor
     return json
 }
 
-const loaderLiber3 = async (ctx: any, args: Liber3Args) => {
+const loaderLiber3 = async (ctx: TBaseContext, args: Liber3Args) => {
     let loader = new DataLoader<string, string>(async keys => {
         console.log(`loaderLiber3-${keys}-🐹🐹🐹`)
         try {

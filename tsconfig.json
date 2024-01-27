@@ -106,6 +106,12 @@
 
     "skipLibCheck": true                                 /* Skip type checking all .d.ts files. */
   },
+  "ts-node": {
+    "files": true
+  },
+  "files": [
+    "typings/global.d.ts"
+  ],
   "include": [
     "src",
     "typings"
