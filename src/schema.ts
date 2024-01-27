@@ -1,10 +1,7 @@
 import { makeExecutableSchema } from '@graphql-tools/schema'
-import Hello from './services/Hello'
-import World from './services/World'
+import services from './services'
 
-const typeDefinitionList = [World.typeDefinitions, Hello.typeDefinitions]
-const resolverList = [World.resolvers, Hello.resolvers]
 export const schema = makeExecutableSchema({
-  resolvers: resolverList,
-  typeDefs: typeDefinitionList
+    resolvers: services.resolverList,
+    typeDefs: services.typeDefinitions,
 })
