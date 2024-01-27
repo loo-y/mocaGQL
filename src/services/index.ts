@@ -1,9 +1,9 @@
 import { IExecutableSchemaDefinition } from '@graphql-tools/schema'
 import Hello from './Hello'
-import World from './World'
+import Liber3 from './Liber3'
 import Link from './Link'
 
-const serviceList = [Hello, World, Link]
+const serviceList = [Hello, Liber3, Link]
 
 export default {
     typeDefinitions: serviceList.map(service => service.typeDefinitions),

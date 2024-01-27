@@ -1,12 +1,12 @@
 const typeDefinitions = /* GraphQL */ `
-  type Query {
-    hello: String!
-  }
+    type Query {
+        hello: String!
+    }
 `
 const resolvers = {
     Query: {
-      hello: () => 'Hello!'
-    }
+        hello: () => 'Hello!',
+    },
 }
 
 export default {
