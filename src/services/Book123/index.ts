@@ -13,8 +13,9 @@ const resolvers = {
             const bookArg = args?.params || {}
             const { keywords, count } = bookArg || {}
             if (!keywords) return []
-
-            const result: any = await (await Book1233Dal.loader(ctx, { keywords, count })).load('all')
+            const key = keywords
+            const loader = Book1233Dal.loader(ctx, { keywords, count, key })
+            const result: any = await (await loader).load(key)
             if (Array.isArray(result?.books)) {
                 return _.map(result.books, book => {
                     return {
